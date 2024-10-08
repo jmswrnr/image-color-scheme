@@ -1,0 +1,38 @@
+{
+  "name": "image-color-scheme",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "typings": "dist/types.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "typecheck": "tsc --noEmit -p tsconfig.json --composite false",
+    "release:patch": "npm run typecheck && release-it patch",
+    "release:minor": "npm run typecheck && release-it minor",
+    "release:major": "npm run typecheck && release-it major"
+  },
+  "keywords": [
+    "image",
+    "color",
+    "color-scheme",
+    "theme",
+    "web"
+  ],
+  "author": "James Warner",
+  "license": "MIT",
+  "description": "Handy utility for detecting the color scheme of an image.",
+  "devDependencies": {
+    "esbuild": "^0.23.1",
+    "release-it": "^17.6.0",
+    "rollup": "^4.21.2",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-esbuild": "^6.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmswrnr/image-color-scheme.git"
+  }
+}

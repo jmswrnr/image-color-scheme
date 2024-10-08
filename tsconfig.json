@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "isolatedModules": false,
+    "target": "esnext",
+    "module": "esnext",
+    "removeComments": true,
+    "skipLibCheck": true,
+    "alwaysStrict": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+  },
+  "include": ["src/**/*.ts"]
+}
