@@ -5,7 +5,7 @@
 
 # image-color-scheme
 
-Calculate the color scheme for an image (`"dark" | "light" | "color"`).
+Calculate the color scheme from image data (`"dark" | "light" | "color"`).
 
 ## Install
 
