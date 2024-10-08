@@ -26,7 +26,7 @@ import { ImageColorScheme, getImageColorScheme } from "image-color-scheme";
 import styles from "./InvertingIcon.module.css";
 
 export const InvertingIcon = () => {
-  const [colorScheme, setColorScheme] = useState<ImageColorScheme>;
+  const [colorScheme, setColorScheme] = useState<ImageColorScheme>("color");
 
   return (
     <img
