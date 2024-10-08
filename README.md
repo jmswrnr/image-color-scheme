@@ -5,7 +5,7 @@
 
 # image-color-scheme
 
-Calculate the color scheme from image data (`"dark" | "light" | "color"`).
+Calculate the color scheme from an image (`"dark" | "light" | "color"`).
 
 ## Install
 
@@ -14,6 +14,23 @@ Calculate the color scheme from image data (`"dark" | "light" | "color"`).
 ```bash
 npm install image-color-scheme
 ```
+
+## API
+
+```ts
+getImageColorScheme(image, options);
+```
+
+- `image`: Input image source (`CanvasImageSource`: can be `img` or `svg` element).
+- `options?`: Optional options object.
+
+### Options
+
+- `context`: Custom `CanvasRenderingContext2D`.
+- `sampleCount`: Number of pixel samples, default: `23`.
+- `canvasSize`: Canvas resolution, default: `16`.
+- `colorThreshold`: Normalized saturation value to consider a pixel as colorful (`0-1`), default: `0.1`.
+
 
 ## Example Usage
 
@@ -61,14 +78,3 @@ If the icon color scheme matches the theme, invert the icon to maximize contrast
 ```
 
 This will not invert colored icons as they are detected as `"color"` scheme.
-
-## Options
-
-```ts
-getImageColorScheme(image, options);
-```
-
-- `context`: Use a custom `CanvasRenderingContext2D`.
-- `sampleCount`: Specify number of pixel samples, default: `23`.
-- `canvasSize`: Specify the canvas resolution, default: `16`.
-- `colorThreshold`: Normalized saturation amount to consider a pixel as colorful, value `0-1`, default: `0.1`.
