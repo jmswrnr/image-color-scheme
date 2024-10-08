@@ -1,6 +1,6 @@
 {
   "name": "image-color-scheme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "typings": "dist/types.d.ts",
   "type": "module",
