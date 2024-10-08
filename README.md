@@ -17,7 +17,9 @@ npm install image-color-scheme
 
 ## Example Usage
 
-The most common use case for this utility is to invert a dynamically loaded icon to contrast with the page theme; here's how I do this in React & CSS Modules:
+The most common use case for this utility is to invert an icon to contrast with the page theme. This is useful for dynamically-fetched images which would otherwise require manual configuration based on their color scheme. 
+
+Here's how I do this in React & CSS Modules:
 
 ### React
 
