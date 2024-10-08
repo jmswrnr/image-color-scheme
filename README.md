@@ -5,7 +5,7 @@
 
 # image-color-scheme
 
-Handy utility for detecting the color scheme of an image `"dark" | "light" | "color"`.
+Calculate the color scheme for an image (`"dark" | "light" | "color"`).
 
 ## Install
 
