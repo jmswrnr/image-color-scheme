@@ -5,6 +5,7 @@ export type ImageColorSchemeOptions = {
   sampleCount?: number;
   canvasSize?: number;
   colorThreshold?: number;
+  colorAggregate?: boolean;
 };
 
 let canvas: HTMLCanvasElement;
@@ -13,6 +14,7 @@ let context: CanvasRenderingContext2D | null;
 const DEFAULT_SAMPLE_COUNT = 23;
 const DEFAULT_CANVAS_SIZE = 16;
 const DEFAULT_COLOR_THRESHOLD = 0.1;
+const DEFAULT_COLOR_AGGREGATE = false;
 
 const getContext = () => {
   canvas ||= document.createElement("canvas");
@@ -33,6 +35,7 @@ export const getImageColorScheme = (
   const sampleCount = options?.sampleCount || DEFAULT_SAMPLE_COUNT;
   const canvasSize = options?.canvasSize || DEFAULT_CANVAS_SIZE;
   const colorThreshold = options?.colorThreshold || DEFAULT_COLOR_THRESHOLD;
+  const colorAggregate = options?.colorAggregate || DEFAULT_COLOR_AGGREGATE;
 
   ctx.canvas.width = canvasSize;
   ctx.canvas.height = canvasSize;
@@ -60,7 +63,11 @@ export const getImageColorScheme = (
     const isColor = (max !== 0 ? (max - min) / 255 : 0) > colorThreshold;
 
     if (isColor) {
-      color += a;
+      if (colorAggregate) {
+        color += a;
+      } else {
+        return "color";
+      }
     } else {
       const isDark = (r * 2126 + g * 7152 + b * 722) / 10000 < 128;
       if (isDark) {
