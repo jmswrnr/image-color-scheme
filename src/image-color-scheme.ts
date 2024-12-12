@@ -1,4 +1,4 @@
-export type ImageColorScheme = "dark" | "light" | "color";
+export type ImageColorScheme = "dark" | "light" | "grayscale" | "color";
 
 export type ImageColorSchemeOptions = {
   context?: CanvasRenderingContext2D;
@@ -80,10 +80,12 @@ export const getImageColorScheme = (
 
   const maxSchemeValue = Math.max(dark, light, color);
 
-  if (maxSchemeValue === dark) {
+  if (maxSchemeValue === dark && light === 0) {
     return "dark";
-  } else if (maxSchemeValue === light) {
+  } else if (maxSchemeValue === light && dark === 0) {
     return "light";
+  } else if (maxSchemeValue === light || maxSchemeValue === dark) {
+    return "grayscale";
   } else {
     return "color";
   }

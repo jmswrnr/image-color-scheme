@@ -33,11 +33,13 @@ getImageColorScheme(image, options);
 - `colorAggregate`: Detect color using all sampled pixels, `boolean`, default: `false`.
   - `false`: Only one sampled pixel needs to be saturated for the scheme to return `"color"`.
   - `true`: Majority of sampled pixels need to be saturated for the scheme to return `"color"`.
- 
+
 ### Return
-- `"color"`: Image contains color (see `colorAggregate` option for specifics).
-- `"dark"`: Image is mostly dark grayscale pixels.
-- `"light"`: Image is mostly light grayscale pixels.
+
+- `"dark"`: Image is only dark grayscale pixels.
+- `"light"`: Image is only light grayscale pixels.
+- `"grayscale"`: Image has light and dark grayscale pixels.
+- `"color"`: Image has colored pixels (see `colorAggregate` option for specifics).
 
 ## Example Usage
 
